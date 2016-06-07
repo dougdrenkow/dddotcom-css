@@ -1,4 +1,2 @@
 # dddotcom-css
-CSS for http://douglasdrenkow.com
-
-See also https://github.com/dougdrenkow/dddotcom-php and https://github.com/dougdrenkow/dddotcom-js.
+CSS for my portfolio, http://douglasdrenkow.com, definitely un-minified, serving as my online reference for solving a great number of design problems, including mobile-first Responsive Web Design (RWD) from scratch (i.e., not using Bootstrap etc.).
