@@ -1,0 +1,3237 @@
+﻿/* S T Y L E S H E E T
+ * For DouglasDrenkow.com
+ *
+ * OVERALL DESIGN CONSIDERATIONS
+ * GENERAL VALUES
+ * UNCHANGING DIVISION-SPECIFIC VALUES
+ * RESPONSIVE WEB DESIGN VALUES
+ *
+ * Copyright 2016 Douglas Drenkow. All Rights Reserved.
+ */
+ 
+/* OVERALL DESIGN CONSIDERATIONS
+
+Please note that in addition to a lifelong love of color, and color theory, I professionally practiced the art of portrait painting for years, and learned the concepts of design -- line, form, color, space, and composition -- by studying works of the Masters.
+
+LINES, SHAPES, & SPACE: Although I revel in creating the ("skeuomorphic") illusion of three-dimensional objects onscreen (and appreciate Google's "material design"), I have generally followed the contemporary trend towards a flat, minimalist look.
+
+Therefore, there are few if any gradients or shadows or borders. And corners of boxes are rounded -- not because machined real-world objects are more durable that way (which they are) but because human beings have an instinctive fear of "sharp" things, but an instinctive attraction to "round" things -- a balance between the two, as with rounded corners, is typically most satisfying -- not hard and harsh but not bubblelike or babyish either.
+
+COLORS: "Heaven" (blue) above; "Earth" (warm colors) below; and "Us" (black and white and shades of gray, and everything else) in between.
+
+Blue -- the color of the sky and, not surprisingly, a symbol of Heaven, truth, or other virtues in most human cultures -- is the world's most popular hue, so I followed the tradition of having blue links (which stand out well amongst black text) on white backgrounds. Incidentally, there is no color-blindness to blue, as there is to, say, red.
+
+Complementarily, in the blue header the font of the button-links is white.
+
+Note that at least with blues, I followed the Müeller Principle: Darker blues look better to most human eyes when they are on the violet side (as anything from #0000bf to #000040 looks anyway); lighter blues look better on the green side (ex. #0080ff, the bg color of the header buttons when in focus or active).
+
+A shade of red, the world's second-most popular color and the most "attention getting" hue, is used for various headings, error messages, and the "call to action" buttons in the footer -- so that they do not get overlooked (as they do if blue).
+
+Green -- the world's third-most popular color -- rounds out the triad of primary additive colors of light; and because it has the highest brightness of the primary additive hues (like yellow among the primary subtractive hues, in pigments) I used it for the subtitle in my logo.
+
+Two personal notes: The name "Douglas" means "black stream," so the logo is on a black header; and as a Plant Science graduate of U.C., Davis, and as a lifelong gardener, I like "greenery," as in the logo subtitle.
+
+However, for the blockquotes and sidebar quotes (as of praise for my works) a light green did not "look" as serious as the more culturally ingrained "gold" or "ivory" -- with black and red complements, as in both Eastern and Western traditions -- traditions based on pigments, from the earth, not lights, from monitors' LEDs.
+
+Quantitatively, for something of a systematic approach, I have typically divided the hexadecimal specifications for colors into fourths -- for example, black is, of course, #000000; dark gray, #404040; medium gray, #808080; light gray, #bfbfbf; and white, of course, #ffffff -- which helps maximize contrasts.
+
+And also in keeping with hexadecimals, representing Base 16, if further division was required, it would be into eighths and sixteenths: ex. lighter gray is 87.5% brightness, or #dfdfdf.
+
+This approach varies from the sixths so in vogue today -- for example, #000, #333, #666, #999, #ccc, #fff -- which I choose not to use particularly because there is no middle gray.
+
+Here is my overall color palette (Note that I kept to fully saturated or fully bright hues for impact, particularly for the smaller screens of mobile devices):
+
+NAMES			HUE	SAT	BRI	HEX
+
+BLUES (Note Müeller Principle, above: Lighter blues on green side; darker blues (typically) on violet side)
+	
+Lightest Blue	195	100	100	00bfff
+Lighter Blue	210	100	100	0080ff
+Light Blue		225	100	100	0040ff
+Blue			240 100 100	0000ff
+Dark Blue		240	100	 75	0000bf
+Darker Blue		240	100  50	000080
+Darkest Blue	240 100  25	000040
+
+REDS
+
+Red				360 100 100.0   ff0000
+Dark Red		360	100	 87.5	df0000
+Darker Red		360	100	 75.0	bf0000
+Darkest Red		360	100	 62.5	a00000
+
+GREENS
+
+Green			120	100	100	00ff00
+
+YELLOWS (Note Müeller Principle, above: Lighter yellow on red side. Gold, like other borders of boxes on white background, created simply by lowering Hex values by one "notch.")
+
+Ivory 			 45  25 100.0 	ffefbf
+Gold 	         45 100  87.5	e1a900;
+
+
+GRAYS
+
+White			xxx	  0 100.0	ffffff
+Lightest Gray	xxx	  0  87.5	dfdfdf
+Lighter Gray	xxx	  0	 75.0	bfbfbf
+Light Gray      xxx   0  62.5   a0a0a0
+Medium Gray		xxx	  0  50.0	808080
+Dark Gray       xxx   0  37.5   606060
+Darker Gray		xxx	  0  25.0	404040
+Darkest Gray 	xxx   0  12.5   202020
+Black			xxx	  0	  0.0	000000
+
+TYPOGRAPHY & SIZES: For consistency, one font is used throughout: "Sofia Pro", from Adobe TypeKit. I chose this particular font because such geometric styles have always struck me as both formal but unpretentious, which I value; and unlike "Futura PT," also in Adobe TypeKit (as a variant of the classic Futura font) Sofia Pro does not have a small "x-height," so I do not have to "oversize" the upper-case characters to allow the lower-case characters to be readily readable.
+
+Onscreen, I set the font-size on the html element at 16px -- that font-size defines 1rem, in which virtually all other measurements will be given (Although see the discussion about @media queries, below). 
+
+There are three weights used: Light (300) typ. for text and large headings (h1, h2, h3, h4), Regular (400) typ. for small headings (h5 and h6), and Semi Bold (600) used for bold (as in my logo ... so you don't forget who I am).
+
+RESPONSIVE WEB DESIGN (RWD): For best viewing of this font, I set the font-size on the html element at 16px -- this, the default font-size for the document, thus defines for this site 1.0rem -- one "root em" (font-relative) unit -- in which I have specified virtually all measurements, both horizontal and vertical, for the most seamless and truly Responsive Web Design: All sizes are consistently proportioned to one standard and, thus, to one another (and I've kept the relative range of variation in font-sizes modest, between 0.875rem [typ. 14px] for captions to 2rem [typ. 32px] for page titles, so nothing looks "too big" or "too small" in any typical viewport).
+
+TYPICAL EXTENTS (Absolute to Relative units)
+
+Pixels  REMs
+ 1      0.0625
+ 2      0.125
+ 3      0.1875
+ 4      0.25
+ 5      0.3125
+ 6      0.375
+ 7      0.4375
+ 8      0.5
+ 9      0.5625
+10      0.625
+11      0.6875
+12      0.75
+13      0.8125
+14      0.875
+15      0.9375
+16      1.0
+
+Incidentally, note how both hexadecimal colors (explained above) and REM extents (based, as is customary, on 16px) are specified in sixteenths -- arguably the simplest division, being half of a half of a half of a half, and thus the division most able to convey differences in sizes specified in that many distinct divisions.
+
+Note, however, that there is a special quality to rems that can complicate matters somewhat, but not so much in my experience as to justify "throwing the baby out with the bath water" -- going back to pixels or ems (which are relative to the varying font-sizes of parent elements, not the unvarying font-size of the html element) -- as sometimes heated discussions online have proposed.
+
+The complication is that 1rem for @media queries -- at the heart of RWD -- is not relative to the font-size of the html element -- as it is for all other measurements -- but relative to the "initial default font-size" -- which for almost all modern browsers is 16px.
+
+So I have calculated my @media queries at 1rem = 16px. But I have not specified those queries in terms of pixels. Why?
+
+If I specify @media queries in absolute terms, of pixels, then this site's multi-column layouts break down if the user increases or decreases the Zoom factor of the browser; and such adjustment is common among users but unpredictable for any particular user.
+
+But if I specify @media queries in relative terms, of rems, then this site's multi-column layouts are maintained: For example, if an older user, with poorer eyesight, increases their browser's Zoom from 100% to 150%, only two instead of three columns may fit onscreen; but they will fit exactly, rather than be "cut off" at the right side, as they will be at times if specified in absolute pixels.
+
+In particular, this site's mobile-first RWD is based on columns with a minimum @media query width of 20rem (= 320px for most browsers at 100% Zoom = 20rem based on the html font-size, of 16px/1rem), arguably the most "common denominator" in various screen widths -- from smartphones and tablets to laptops and desktops -- this design displays nicely, arguably optimally, at virtually all sizes and proportions of viewports.
+
+And particularly with floating boxes -- of the same width (including any padding and margins) as their columns -- the design flows nicely between various and varying viewports, as any good RWD should.
+
+Moreover, in addition to being responsive with regards to horizontal measurements -- as by using @media queries -- this site's design is also responsive with regards to vertical measurements -- as by using jQuery to change the positioning of the header from fixed to relative, and thus able to be scrolled up out of view, when the viewport is not high enough to display an entire dropdown nav menu (for example on a smartphone turned sideways, as I am prone to do). See dd.js.
+
+Incidentally, although these OVERALL DESIGN CONSIDERATIONS are extensive, they total only about 10,000 characters -- ten kilobytes (80 kilobits) of data -- taking less than a hundredth of a second to download, even at a relatively slow ten-megabit-per-second mobile Internet download speed <Ref: http://www.netindex.com/download/2,1/United-States/>. */ 
+
+/* GENERAL VALUES */
+
+html {
+	font-family: "sofia-pro",sans-serif;
+	font-size: 16px; /* typical and customary in various devices and browsers */
+}
+
+body,
+p,
+input,
+select,
+textarea,
+button {
+	box-sizing:content-box;
+	margin: 0 0;
+	border:none;
+	padding:0 0;
+	text-align:left;
+	line-height:1.5;
+	font-weight:300;
+	font-style:normal;
+	color: #000000;
+	text-shadow:none;
+	background-color:transparent;
+}
+
+body {
+	background-color:#ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin:0 0;
+	border:none;
+	padding:0 0 1rem;
+	font-weight:300;
+	font-style:normal;
+	color: #000000;
+}
+
+h1 { /* Heading for Home Page, like larger version of h2 */
+	font-size:2rem;
+	margin:0 0 1rem;
+	border:none;
+	padding:0 0;
+	color:#bf0000;
+	font-weight:300;
+	text-align:center;
+	/* See also Heading for Site (h1#site-title a, below) */
+}
+
+h2 { /* Heading for Page */
+	font-size: 1.875rem;
+	margin:0 0 1rem;
+	border:none;
+	padding:0 0;
+	color:#bf0000;
+	font-weight:300;
+	text-align:left;
+}
+
+h3 { /* Heading for Main-Content */
+	font-size:1.75rem;
+	font-weight:300;
+	color:#000000;
+}
+
+h4 { /* Heading for displayBox or for Text Section */
+	font-size: 1.5rem;
+	font-weight:300;
+}
+
+h5 { /* Sub-Heading for Page */
+	font-size: 1.25rem;
+	font-weight:400;
+	color:#000000;
+}
+
+h6 { /* Sub-Heading for displayBox or for Text Section */
+	font-size: 1.125rem;
+	font-weight:400;
+	color:#bf0000;
+   }
+
+*.superSubHead { /* as for DEATH OF TISSUES for list of Plant Diseases in Controlling Diseases of Tomatoes, in sample material of Computerized Vegetable Gardening (between h6 bold and ALL CAPS names of diseases). */
+	text-decoration:underline;
+}
+
+b,
+strong,
+*.textbold,
+*.text-bold {	
+	font-weight:600;
+}
+
+*.textitalic,
+*.text-italic {
+	font-style:italic;	
+}
+
+*.textbolditalic {	
+	font-weight:600;
+	font-style:italic;
+}
+
+*.textnormalstyle {
+	font-style:normal;
+}
+
+*.textsmall,
+*.textcentersmall {
+	font-size:0.875rem;	
+}
+
+*.textcenter,
+*.textcentersmall {
+	text-align:center;	
+}
+
+p {
+	margin:0 0 1rem;
+}
+
+ul,
+ol {
+	margin:0 0;
+	padding:0 0;
+}
+
+ul {
+	list-style-type:none;
+}
+
+ul.bulleted,
+ul.pdf {
+	margin:0 0;
+	border:none;
+	padding:0 0 0 1.125rem;
+}
+
+ul.bulleted li {
+	list-style-type:none;
+	margin:0 0 1rem -1rem;
+	border:none;
+	padding:0 0 0 1rem;
+	text-align:left;
+	font-weight:300;
+	background-size:0.625rem 0.625rem;
+	background-position:0rem 0.4375rem;
+	background-repeat:no-repeat;
+	background-image: url(../images/ddlogoBlack-12x12.png);
+}
+	
+#mainContent ul li.textbold a:link {
+	color:#0000bf;
+	text-decoration:none;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent ul li.textbold a:visited {
+	color:#0000bf;
+	text-decoration:none;
+}
+
+#mainContent ul li.textbold a:hover,
+#mainContent ul li.textbold a:focus,
+#mainContent ul li.textbold a:active {
+	color:#0000bf;
+	text-decoration:underline;
+}	
+	
+ul.bulleted-inline {
+	margin:0 0;
+	border:none;
+	padding:0 0;
+}
+
+ul.bulleted-inline li {
+	display:inline;
+	list-style-type:none;
+	margin:0 0;
+	border:none;
+	padding:0 0;
+	text-align:left;
+}
+
+ul.bulleted-inline li::after {
+	content:"\00a0\00b7";
+}
+
+ul.bulleted-inline li:last-child::after {
+	content:"";
+}
+
+ul.pdf li {
+	list-style-type:none;
+	margin:0 0 1rem -1.125rem;
+	border:none;
+	padding:0 0 0 1.125rem;
+	text-align:left;
+	background-size:0.75rem 0.75rem;
+	background-position:0 0.375rem;
+	background-repeat:no-repeat;
+	background-image: url(../images/pdficon_small.png);
+}
+
+li {
+	margin-left:0;
+	padding-left:0;
+	padding-bottom:1rem;
+}
+
+ul ul,
+ol ol {
+	margin-top:1rem;
+	margin-left:2rem;	
+}
+
+ul ul ul,
+ol ol ol {
+	margin-top:1rem;
+	margin-left:2rem; /* relative to parent (ul) */	
+}
+
+ul ul ul ul,
+ol ol ol ol {
+	margin-top:1rem;
+	margin-left:2rem;	
+}
+
+table.altRows {
+	margin-bottom:1rem;	
+}
+
+table.altRows th,
+table.altRows td {
+	padding:0.25rem 0.5rem;
+}
+
+table.altRows a>img {
+	padding:0rem 0.375rem;
+}
+
+table.altRows tr:nth-child(odd) {
+    background-color: #dfdfdf;
+}
+
+table.altRows tr:first-child {
+	background-color: #808080;
+}
+
+table.altRows th {
+	font-weight:400;
+	color:#ffffff;
+}
+
+#mainContent table.altRows th a:link {
+	color:#ffffff;
+	text-decoration:underline;
+}
+
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent table.altRows th a:visited {
+	color:#ffffff;
+	text-decoration:underline;
+}
+
+#mainContent table.altRows th a:hover,
+#mainContent table.altRows th a:focus,
+#mainContent table.altRows th a:active {
+	color:#ffffff;
+	text-decoration:none;
+}
+
+table.altRows td:first-child {
+	text-align:right;
+}
+
+table.altRows.iconKey td:first-child {
+	text-align:center;
+}
+
+table.altRows.iconKey td b {
+	color:#808080;
+}
+
+/* See also nowrap rule for Date column for width greater than 32rem, below. */
+
+blockquote {
+	position:relative;
+	margin:0 0 1rem;
+	border:none;
+	border-radius:0.5rem;
+	padding:1rem 1rem;
+	text-align:left;
+	color: #000000;
+	font-weight:300;
+	font-style:normal;
+	background-color:#dfdfdf;
+}
+
+*.citation {
+	width:100%;
+	text-align:right;
+	font-style:italic;
+	font-weight:400;
+	color: #000000;
+}
+
+blockquote.praise {
+	border:none;
+	background-color:#ffefbf;
+}
+
+blockquote.blockquoteText {
+	color: #000000;
+	background-color:#dfdfdf;
+}
+
+blockquote.blockquoteText *.citation {
+	color: #000000;
+}
+
+*.floatLeft {
+	float:left;
+}
+
+*.floatRight {
+	float:right;
+}
+
+/* Although the .clearfix method has its (semantic) virtues (and arguably less code), the following method works in all (modern) browsers, and without the need to create a pseudo element, only to immediately declare it content-less); and the left- and right-clearing classes, below, are consistent. I'll wait until mainstream browsers support the new W3C min-height property of contain-floats <http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/> before changing methods, as long as they work. */
+
+*.clearFloat {
+	clear:both;
+}
+
+*.clearFloatLeft {
+	clear:left;
+}
+
+*.clearFloatRight {
+	clear:right;
+}
+
+*.horizsingleline, /* remnants of previous text */
+*.horizdoubleline {
+	display:none;
+}
+
+a img {
+	border:none;
+	outline:none;
+}
+
+/* UNCHANGING DIVISION-SPECIFIC VALUES (vs. RWD Values, below) */
+
+#header,
+#footer {
+	z-index:200;
+	left: 0;
+	right: 0;
+	width: auto;
+	margin:0 0;
+	border:none;
+	padding:0 0;
+	color: #ffffff;
+}
+
+#header {
+	top:0;
+	background-color:#000060;
+}
+
+#footer {
+	position:fixed;
+	bottom:0;
+	background-color:#600000;
+}
+
+a#ddSiteTitle-ddLogo-box {
+	outline:none;
+	border:none;
+	text-decoration:none;
+}
+
+#ddSiteTitle-ddLogo-box {
+	display:block;
+	position:relative;
+	margin:0 auto;
+	border:none;
+	padding:0 0;
+	height:3.5625rem;
+	width:20rem;
+}
+
+/* Using text, siteTitle and subTitle displayed differently on different browsers, with unsightly overflow-y */
+
+img#ddSiteTitle {
+	z-index:300;
+	display:block;
+	position:absolute;
+	top:0rem;
+	left:0rem;
+	margin:0 0;
+	border:none;
+	padding:0 0;
+	height:3.5625rem;
+	width:20rem;
+}
+
+img#ddLogo {
+	z-index:400;
+	display:block;
+	position:absolute;
+	top:0.375rem;
+	left:9rem;
+	margin:0 0;
+	border:none;
+	padding:0 0;	/* Using padding instead of margin keeps spinning from becoming interrupted and then resetting when moving cursor from logo to siteTitle or vice versa. */
+	width:1.75rem;
+	height:1.75rem;
+}
+
+/* For my "Flying Double D" logo. Note that "shorthand notation will not work in Safair 4+" <http://stackoverflow.com/questions/25258359/css3-animation-not-loading-in-safari> <http://stackoverflow.com/questions/9211261/css3-animation-not-working-in-safari> <https://developer.apple.com/library/safari/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/AnimatingWithKeyframes/AnimatingWithKeyframes.html> */
+
+#ddSiteTitle-ddLogo-box:hover #ddLogo,
+#ddSiteTitle-ddLogo-box:focus #ddLogo,
+#ddSiteTitle-ddLogo-box:active #ddLogo {
+	-webkit-animation-name: logo-y-spin;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: logo-y-spin;
+	-moz-animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	animation-name: logo-y-spin;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+#homePage #ddSiteTitle-ddLogo-box #ddLogo {
+	-webkit-animation-name: logo-y-spin;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: logo-y-spin;
+	-moz-animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	animation-name: logo-y-spin;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes logo-y-spin {
+	0% {
+		-webkit-transform: rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+
+/* Firefox */
+@-moz-keyframes logo-y-spin {
+	0% {
+		-moz-transform: rotateY(0deg);
+	}
+	100% {
+		-moz-transform: rotateY(360deg);
+	}
+}
+
+/* Standard syntax */
+@keyframes logo-y-spin {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+#subTitle {
+	display:block;
+	margin:0 0;
+	border:none;
+	padding:0 0;	
+	font-size:1.0625rem;
+	line-height:0.9375rem;
+	font-weight:300;
+	font-variant:small-caps;
+	letter-spacing:0.0625rem;
+	text-decoration:none;
+	text-align:center;
+}
+
+#footer {
+	bottom:0;
+	height:2.625rem;
+	text-align:center;
+}
+	
+body#notFoundPage h2 {
+	color:#000000;
+}
+
+#mainContent {
+	display:block;
+	position:relative;
+	margin:3.75rem 0 2rem;
+	border:none;
+	padding:0 0;
+}
+
+#mainContent a:link {
+    color: #0000bf;
+	text-decoration:none;
+	font-weight:400;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent a:visited {
+    color: #0000bf;
+	text-decoration:none;
+	font-weight:400;
+}
+
+#mainContent a:hover,
+#mainContent a:focus,
+#mainContent a:active {
+    color: #0000bf;
+	text-decoration:underline;
+	font-weight:400;
+}
+
+#mainContent li a:link {
+    color: #0000bf;
+	text-decoration:none;
+	font-weight:400;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent li a:visited {
+    color: #0000bf;
+	text-decoration:none;
+	font-weight:400;
+}
+
+#mainContent li a:hover,
+#mainContent li a:focus,
+#mainContent li a:active {
+    color: #0000bf;
+	text-decoration:underline;
+	font-weight:400;
+}
+	
+#mainContent ul.pdf li a:link {
+    color: #0000bf;
+	font-weight:400;
+	text-decoration:none;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+#mainContent ul.pdf li a:visited {
+    color: #0000bf;
+	font-weight:400;
+	text-decoration:none;
+}
+
+#mainContent ul.pdf li a:hover,
+#mainContent ul.pdf li a:focus,
+#mainContent ul.pdf li a:active {
+    color: #0000bf;
+	font-weight:400;
+	text-decoration:underline;
+}
+
+#mainContent ul.homePageSidebar-list li a:link {
+    color: #bf0000;
+	text-decoration:none;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent ul.homePageSidebar-list li a:visited {
+    color: #bf0000;
+	text-decoration:none;
+}
+
+#mainContent ul.homePageSidebar-list li a:hover,
+#mainContent ul.homePageSidebar-list li a:focus,
+#mainContent ul.homePageSidebar-list li a:active {
+    color: #bf0000;
+	text-decoration:underline;
+}
+	
+*.backToTop,
+*.backToTopScroller {
+	margin:0 0 0.875rem;
+	font-size:0.875rem;
+	text-align:left;	
+}
+
+#copyright *.backToTop {
+	text-align:center;	
+}
+	
+*.backToTopScroller {
+	margin:0.875rem 0;
+	font-size:0.875rem;
+	text-align:center;	
+	line-height:1.5;
+}
+
+*.backToTop::before,
+*.backToTopScroller::before {
+	display:inline-block;
+	margin:0 0.1875rem 0 0;
+	border:none;
+	padding:0 0;
+	width:0.625rem;
+	height:0.625rem;
+    background-size:contain;
+	background-repeat:no-repeat;
+	background-image: url(../images/arrowBlueN-48x48.png);
+	content:"";
+}
+
+#mainContent h4 a:link {
+	color:#bf0000;
+	font-weight:400;
+	text-decoration:none;
+}
+
+/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+
+#mainContent h4 a:visited {
+	color:#bf0000;
+	font-weight:400;
+	text-decoration:none;
+}
+
+#mainContent h4 a:hover,
+#mainContent h4 a:focus,
+#mainContent h4 a:active {
+	color:#bf0000;
+	font-weight:400;
+	text-decoration:underline;
+}
+
+#homePage #mainContent h3 { /* like larger version of #mainContent h4 */
+  	color: #bf0000;
+   	font-weight:300;
+ }
+
+#copyright {
+	margin:0 0;
+	border:none;
+	padding:0 1rem;
+	text-align:center;
+	font-size:0.875rem;
+	background-color:#ffffff;
+}
+
+#tailpiece { /* "Flying Double-D" logo, in blue */
+	margin:1rem 0 0;
+}
+
+#tailpiece:hover, /* BTW "tailpiece" is the proper typographic term */
+#tailpiece:focus,
+#tailpiece:active {
+	-webkit-animation-name: logo-y-spin;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: logo-y-spin;
+	-moz-animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	animation-name: logo-y-spin;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+/* Note: logo-y-spin animation is defined above, with siteTitle-logo-subTitle-box */
+
+#copyright .careerLinks {
+	padding:1rem 0;
+	font-size:1rem;
+	line-height:1.5;
+	font-weight:400;
+}
+	
+/* RWD (RESPONSIVE WEB DESIGN) VALUES */
+
+/* Note that in general, for this flexible-width layout, although most horizontal dimensions, like all vertical dimensions, are specified in rems, they are sometimes in percentages (particularly for buttons and dropdown menus in the top and bottom navigation bars; for example, the buttons in the bottom navbar are 25% (including padding and margins) of the (varying) page width). */
+
+/* See the definition of 1rem in @media queries, with notes about RWD, in OVERALL DESIGN CONSIDERATIONS (above).
+
+/* Note with .headerRelative and .headerFixed we also take into account vertical RWD, using jQuery, as when navbar dropdown menus extend below footer. */
+	
+@media all {
+
+/* Start with one column. Note that this layout is typically for a smartphone, typically with a vertical viewport. */
+
+	body {
+		position:relative;
+		min-width:20rem;
+	}
+
+	#header {
+		min-width:20rem;
+		height:5.875rem;
+		margin-bottom:-5.875rem; /* makes no difference when .headerFixed but pulls up #mainContent when .headerRelative (but doesn't work if negative margin included with .headerRelative declarations) */
+	}
+	
+	.headerRelative {
+		position:relative;
+	}
+	
+	.headerFixed {
+		position:fixed;
+	}
+	
+	a.bookmark { /* When click link to bookmark in index, above, page scrolls up until bookmark is at top of viewport; then the fun begins ... */
+
+		display:block; /* necessary for effect */
+
+		margin-bottom:6.875rem; /* Push (indexed) content after bookmark down (1rem) below fixed header (With relative header, there is just extra space between top of viewport and bookmark). */
+
+		margin-top:-5.875rem; /* In effect, pull content before bookmark down to (1rem within) content after bookmark. */
+	}
+	
+	#ddSiteTitle-ddLogo-box {
+		position:relative;
+		display:block;
+		margin:0 auto;
+		border:none;
+		padding:0 0;
+		width:20rem;
+	}
+	
+	#nav-box-box-box {
+		position:absolute;
+		top:3.625rem;
+		bottom:0rem;
+		height:auto;
+		right:0%; /* looks best overall */
+		left:1%;
+		width:auto;
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		background-color:#000060;
+	}
+	
+	*.nav-box-box {
+		float:left;
+		display:block;	
+		margin:0 1%;
+		border:none;
+		padding: 0 0;
+		width:31%;
+		text-align:center;
+	}
+
+	*.nav-box {
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	*.navMenuTrigger-box {
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:100%;
+	}
+	
+	/* Not putting a link within h5.navMenuTrigger eliminates automatically returning to top of page when click # link. */
+	
+	h5.navMenuTrigger {
+		cursor:pointer;
+		display:block;
+		margin:0 0;
+		border:none;
+		border-radius:0.375rem 0.375rem;
+		padding:0.0625rem 0 0.125rem;
+		font-size:1.125rem;
+		text-align:center;
+		font-weight:300;
+		text-decoration:none;
+		color: #ffffff;
+		background-color:#0040ff;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	h5.navMenuTrigger:visited {
+		color: #ffffff;
+		background-color:#0040ff;
+	}
+	
+	h5.navMenuTrigger:hover,
+	h5.navMenuTrigger:focus,
+	h5.navMenuTrigger:active,
+	h5.navMenuTrigger.selected {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	h5.navMenuTrigger.selected:visited {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	h5.navMenuTrigger.selected:hover,
+	h5.navMenuTrigger.selected:focus,
+	h5.navMenuTrigger.selected:active {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	ul.navMenu {
+		display:none;
+		list-style:none;
+		border-radius:0 0 0.5rem 0.5rem;	
+		padding:0.5rem 0 0;
+		width:312%;
+		background-color:#000060;
+	}
+	
+	ul.navMenu#menu1 {
+		margin:0 -212% 0 0;
+	}
+	
+	ul.navMenu#menu2 {
+		margin:0 -106%;
+	}
+
+	ul.navMenu#menu3 {
+		margin:0 0 0 -212%;
+	}
+	
+	*.nav-box li {
+		margin:0 0;
+		border:none;
+		padding:0 0.5rem 0.5rem;
+		text-align:center;
+	}
+	
+	*.nav-box li:last-child {
+		border-radius:0 0 0.5rem 0.5rem;	
+	}
+	
+	*.nav-box li a {
+		display:block;
+		position:relative;
+		margin:0 0;
+		border:none;
+		border-radius:0.25rem 0.25rem;
+		padding:0.25rem 0.25rem;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	*.nav-box li a:link {
+		color: #ffffff;
+		background-color:#0040ff;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	*.nav-box li a:visited {
+		color: #ffffff;
+		background-color:#0040ff;
+	}
+	
+	*.nav-box li.selected a:link {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	*.nav-box li.selected a:visited {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	*.nav-box li a:hover,
+	*.nav-box li a:focus,
+	*.nav-box li a:active,
+	*.nav-box li.selected a:hover,
+	*.nav-box li.selected a:focus,
+	*.nav-box li.selected a:active {
+		color: #ffffff;
+		background-color: #00a0ff;
+	}
+	
+	#fixedBackToTopLink {
+		opacity:0.75; /* "more there than not" */
+		display:none; /* Scrolling toggles Back to Top between hide() and show() via jQuery */
+		cursor:pointer;
+		margin:-2rem auto 0;
+		border:none;
+		border-radius:0.5rem 0.5rem 0 0;
+		padding:0.5rem 0 0.25rem;
+		width:6.5rem;
+		height:1.25rem;
+		background-color:#a00000;
+		text-align:center;
+		font-size:0.875rem;
+		line-height:0.875rem;
+		font-weight:300;		
+		color:#ffffff;
+		text-decoration:none;
+	}
+		
+	#fixedBackToTopLink:visited {
+		opacity:0.75; /* "more there than not" */
+		font-size:0.875rem;
+		line-height:0.875rem;
+		font-weight:300;		
+		color:#ffffff;
+		text-decoration:none;
+		background-color:#a00000;
+	}
+		
+	#fixedBackToTopLink:hover,
+	#fixedBackToTopLink:focus,
+	#fixedBackToTopLink:active {
+		opacity:1.0;
+		font-size:0.875rem;
+		line-height:0.875rem;
+		font-weight:300;		
+		color:#ffffff;
+		text-decoration:underline;
+		background-color:#ff0000;
+	}
+	
+	#footer-toolBox {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		right:0rem;
+		left:0rem;
+		width:auto;
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+	}
+	
+	*.footer-contentBox {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		left:0;
+		right:0;
+		width:auto;
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		text-align:center;
+	}
+
+	*.footer-contentBox a {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		left:0;
+		right:0;
+		width:auto;
+		display:block;
+		margin:0 0;
+		border:none;
+		border-radius:0.375rem 0.375rem;
+		padding:0.4125rem 0;
+		text-align:center;
+		font-size:1.0rem;
+		line-height:1.0rem;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	*.footer-contentBox a:link {
+		color: #ffffff;
+		background-color:#a00000;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	*.footer-contentBox a:visited {
+		color: #ffffff;
+		background-color:#a00000;
+	}
+	
+	*.footer-contentBox a:hover,
+	*.footer-contentBox a:active,
+	*.footer-contentBox a:focus {
+		color: #ffffff;
+		background-color:#ff0000;
+	}
+	
+	#footer-share-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.3125rem;
+		height:auto;
+		left:2%;
+		right:83.67%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding:0 0;
+	}
+
+	#share.footer-contentBox {
+		left:0;
+		right:0;
+		width:auto;
+		color: #ffffff;
+		background-color:#a00000;
+		border:none;
+		border-radius:0.375rem 0.375rem;
+		padding:0.25rem 0;
+	}
+	
+	#share.footer-contentBox:hover,
+	#share.footer-contentBox:focus,
+	#share.footer-contentBox:active {
+		color: #ffffff;
+		background-color:#ff0000;
+	}
+
+	/* .at300m, from AddThis widget, was seen by Inspect element in browser (Chrome). */
+
+	#share.footer-contentBox #shareImage {
+		float:none;
+		position:relative;
+		display:inline-block;
+		vertical-align:text-top;
+		margin:0.1875rem auto;
+		border:none;
+		padding:0 0;
+		width:1rem;
+		background-color:transparent;
+	}
+	
+	#share.footer-contentBox a.addthis_button_compact:link,
+	#share.footer-contentBox a.addthis_button_compact:hover,
+	#share.footer-contentBox a.addthis_button_compact:focus,
+	#share.footer-contentBox a.addthis_button_compact:active {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+		border:none;
+		background-color:transparent;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#share.footer-contentBox a.addthis_button_compact:visited {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+		border:none;
+		background-color:transparent;
+	}
+	
+	#share.footer-contentBox a.addthis_button_compact:link,
+	#share.footer-contentBox a.addthis_button_compact:hover,
+	#share.footer-contentBox a.addthis_button_compact:focus,
+	#share.footer-contentBox a.addthis_button_compact:active {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+		border:none;
+		background-color:transparent;
+	}
+	
+	#share.footer-contentBox a.addthis_button_compact:visited {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+		border:none;
+		background-color:transparent;
+	}
+	
+	*.addthis_toolbox {
+		height:1rem;	
+	}
+
+	#shareText {
+		display:none;
+	}
+
+	#footer-phone-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:18.33%;
+		right:67.33%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	div#phoneIcon {
+		display:inline-block;
+		margin:0 auto;
+		width:1rem;
+		height:1rem;
+		background-color:transparent;
+		background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FFFFFF%3B%22%20d%3D%22M6.939%2C9.189C6.165%2C8.557%2C5.271%2C7.705%2C4.497%2C6.744C3.953%2C6.071%2C3.473%2C5.363%2C3.969%2C4.866l-3.482-3.48C-0.021%2C2.02-1.146%2C5.04%2C3.675%2C9.984c5.08%2C5.211%2C8.356%2C4.097%2C8.92%2C3.511l-3.396-3.4C8.725%2C10.568%2C8.113%2C10.146%2C6.939%2C9.189zM13.82%2C11.519v-0.004c0%2C0-2.648-2.646-2.649-2.647c-0.21-0.211-0.546-0.205-0.754%2C0.002L9.455%2C9.831l3.403%2C3.407c0%2C0%2C0.962-0.96%2C0.961-0.961l0.002-0.001C14.043%2C12.056%2C14.021%2C11.721%2C13.82%2C11.519z M5.192%2C3.644V3.642c0.222-0.222%2C0.2-0.557%2C0-0.758V2.881c0%2C0-2.726-2.725-2.727-2.726C2.255-0.055%2C1.92-0.05%2C1.712%2C0.156L0.751%2C1.121l3.479%2C3.482C4.231%2C4.604%2C5.192%2C3.645%2C5.192%2C3.644z%22%2F%3E%3C%2Fsvg%3E");
+		content:"";
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+	
+	div#phoneText {
+		display:none;
+	}
+	
+	#footer-mail-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:34.67%;
+		right:51%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	div#mailIcon {
+		display:inline-block;
+		margin:0 auto;
+		width:1rem;
+		height:1rem;
+		background-color:transparent;
+		background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FFFFFF%3B%22%20d%3D%22M0%2C3.75V12h14V3.75L7%2C9L0%2C3.75zM14%2C2H0l7%2C5L14%2C2z%22%2F%3E%3C%2Fsvg%3E");
+		content:"";
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+	
+	div#mailText40 {
+		display:none;
+	}
+	
+	div#mailText60 {
+		display:none;
+	}
+	
+	div#mailText80 {
+		display:none;
+	}
+	
+	#footer-searchForm-box-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:51%;
+		right:2%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+
+	#searchForm-box.footer-contentBox {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		left:0;
+		right:0;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+
+	form#searchForm {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		left:0;
+		right:0;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		background-color:#a00000;
+		border:none;
+		border-radius:0.375rem 0.375rem;
+		padding:0 0;
+	}
+	
+	form#searchForm:hover,
+	form#searchForm:focus,
+	form#searchForm:active {
+		outline:none;
+		background-color:#ff0000;
+	}
+	
+	/* If width or max-width of text input, below, is not specified in a percentage, then the input can exceed the right border, esp. at narrow viewport widths (no matter the positioning scheme or other aspect of the input or the containing element). And if min-width is not specified, then the input can stop short at wide viewport widths (Here less than 32rem). */
+	
+	form#searchForm input#searchTerm {
+		position:absolute;
+		top:0;
+		bottom:0;
+		height:auto;
+		left:5%;
+		right:25%;
+		min-width:70%;
+		max-width:70%;
+		display:block;	
+		margin:0 0;
+		border:none;
+		outline:none;
+		padding:0 0 0.25rem;
+		vertical-align:middle;
+		text-align:left;
+		font-size:1.0rem;
+		line-height:1.75rem;
+		font-weight:300;
+		text-decoration:none;
+		font-family: "sofia-pro",sans-serif;
+		color: #ffffff;
+		background-color:transparent;
+	}
+	
+	/* "[W]e need separate rules for each browser. Otherwise the whole group would be ignored by all browsers." <http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css> */
+	
+	form#searchForm input#searchTerm::-webkit-input-placeholder { /* WebKit browsers */
+		padding:0 0;
+		color: #ffffff;
+		font-size:1.0rem;
+		line-height:1.8125rem; /* For placeholder, although that leaves actual input 0.0625rem too high -- best compromise overall */
+		font-weight:300;
+		font-family: "sofia-pro",sans-serif;
+	}
+	form#searchForm input#searchTerm:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		padding:0 0;
+		color: #ffffff;
+		opacity:1;
+		font-size:1.0rem;
+		line-height:1.75rem;
+		font-weight:300;
+		font-family: "sofia-pro",sans-serif;
+	}
+	form#searchForm input#searchTerm::-moz-placeholder { /* Mozilla Firefox 19+ */
+		padding:0 0;
+		color: #ffffff;
+		opacity:1;
+		font-size:1.0rem;
+		line-height:1.75rem;
+		font-weight:300;
+		font-family: "sofia-pro",sans-serif;
+	}
+	form#searchForm input#searchTerm:-ms-input-placeholder { /* Internet Explorer 10+ */
+		padding:0 0;
+		color: #ffffff;
+		font-size:1.0rem;
+		line-height:1.75rem;
+		font-weight:300;
+		font-family: "sofia-pro",sans-serif;
+	}
+	
+	form#searchForm input#searchTerm:hover,
+	form#searchForm input#searchTerm:focus,
+	form#searchForm input#searchTerm:active {
+		border:none;
+		outline:none;
+	}
+	form#searchForm input#searchTerm:focus::-webkit-input-placeholder { /* WebKit browsers */
+		color: transparent;
+		font-weight:300;
+	}
+	form#searchForm input#searchTerm:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		opacity:0;
+		font-weight:300;
+	}
+	form#searchForm input#searchTerm:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+		opacity:0;
+		font-weight:300;
+	}
+	form#searchForm input#searchTerm:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color: #ffffff;
+		font-weight:300;
+	}
+	
+	form#searchForm input#searchButton {
+		position:absolute;
+		top:0rem;
+		bottom:0rem;
+		height:auto;
+		right:0%;
+		left:80%;
+		width:20%;
+		display:block;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		border-radius:0 0.375rem 0.375rem 0;
+		padding:0 0;
+		background-color:transparent;
+		background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FFFFFF%3B%22%20d%3D%22M10.171%2C8.766c0.617-0.888%2C0.979-1.964%2C0.979-3.126c0-3.037-2.463-5.5-5.5-5.5s-5.5%2C2.463-5.5%2C5.5%20s2.463%2C5.5%2C5.5%2C5.5c1.152%2C0%2C2.223-0.355%2C3.104-0.962l3.684%2C3.683l1.414-1.414L10.171%2C8.766z%20M5.649%2C9.14c-1.933%2C0-3.5-1.567-3.5-3.5%20c0-1.933%2C1.567-3.5%2C3.5-3.5c1.933%2C0%2C3.5%2C1.567%2C3.5%2C3.5C9.149%2C7.572%2C7.582%2C9.14%2C5.649%2C9.14z%22%2F%3E%3C%2Fsvg%3E");
+		content:"";
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+	
+	form#searchForm:hover input#searchButton,
+	form#searchForm:focus input#searchButton,
+	form#searchForm:active input#searchButton {
+		outline:none;
+		background-color:#a00000;
+		border:none;
+		border-radius:0 0.375rem 0.375rem 0;
+	}
+	
+	form#searchForm input#searchButton:hover,
+	form#searchForm input#searchButton:focus,
+	form#searchForm input#searchButton:active {
+		outline:none;
+		background-color:#ff0000;
+		border:none;
+		border-radius:0 0.375rem 0.375rem 0;
+	}
+	
+	ul.searchResultsList {
+		margin:0 auto 1rem;
+		text-align:center;
+	}
+
+	ul.searchResultsList li.noResults {
+		color: #bf0000;
+		font-weight:400;
+		text-align:center;
+	}
+	
+	ul.searchResultsList li.noResults::after {
+		display:inline-block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0;
+		height:0;
+		content:"";
+	}
+	
+	*.errorMessage {
+		color: #bf0000;
+		font-weight:400;
+		text-align:center;
+	}
+	
+	h6.careerPlaceDates {
+		color:#000000;
+		font-weight:300;
+		text-align:center;
+	}
+
+	#mainContent {
+		margin:5.625rem 0 5rem;
+		width:100%;
+	}
+
+	#mainContent-intro {
+		display:block;
+		margin:0 auto;
+		border:none;
+		border-radius:0 0 0 0;
+		padding:1rem 1rem;
+		min-width: 18rem;
+		background-color:#ffffff;
+	}
+	
+	#homePage #mainContent {
+		margin-top: 6.625rem;	
+	}
+	
+	*.homeSlide-box { 
+		display:block;
+		position:relative;
+		margin: 0 0 1rem;
+		border:none;
+		padding:0.5rem 0 1rem;
+		min-height:22.5rem;
+		text-align:center;
+		background-color:#404040;
+	}
+	
+	#homeMarket-box {
+		min-height:25.5rem;	
+	}
+	
+	h1.homeSlideHeading {
+		display:block;
+		margin:-0.5rem 0 1rem;
+		border:none;
+		padding:0.5rem 0 1rem;
+		font-size:2rem;
+		line-height:2rem;
+		text-align:center;
+		font-family: "sofia-pro",sans-serif;
+		text-decoration:none;
+		color:#bfbfbf;
+		background-color:#000000;
+	}
+
+	*.prevSlide {
+		position:absolute;
+		top:1.25rem;
+		left:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretGrayW-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+
+	*.prevSlide:visited {
+		position:absolute;
+		top:1.25rem;
+		left:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretGrayW-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	*.prevSlide:hover,
+	*.prevSlide:focus,
+	*.prevSlide:active {
+		position:absolute;
+		top:1.25rem;
+		left:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretWhiteW-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	*.nextSlide {
+		position:absolute;
+		top:1.25rem;
+		right:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretGrayE-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	*.nextSlide:visited {
+		position:absolute;
+		top:1.25rem;
+		right:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretGrayE-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	*.nextSlide:hover,
+	*.nextSlide:focus,
+	*.nextSlide:active {
+		position:absolute;
+		top:1.25rem;
+		right:1rem;
+		cursor:pointer;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		width:0.75rem;
+		height:1rem;
+		content:"";
+		background:url("/images/caretWhiteE-32x40.png");
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	*.cycle-carousel-wrap {
+		bottom:0;
+		right:0;	
+	}
+	
+	*.cycle-slide-div {
+		display:inline-block;
+		margin:0 0;
+		border:none;
+		padding:0 1rem;
+		height:38rem;
+		width:18rem;
+		text-align:center;
+		vertical-align:top;
+	}
+
+	#homeMedia-box *.cycle-slide-div {
+		height:33rem;
+	}
+
+	#homeMarket-box *.cycle-slide-div {
+		height:39rem;
+	}
+
+	#homeCareer-box *.cycle-slide-div {
+		height:32rem;
+	}
+	
+	*.cycle-slide-div-imageCell {
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		text-align:center;
+		vertical-align:top;
+	}
+	
+	*.cycle-slide-div-textCell {
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:1rem 0;
+		text-align:center;
+		vertical-align:top;
+	}
+	
+	*.cycle-slide-div img.image {
+		margin:0 auto;
+		border:none;
+		border-radius:0.5rem 0.5rem;
+		padding:0 0;
+		max-width:18rem;
+		max-height:18rem;
+	}
+	
+	#mainContent *.cycle-slide-div h4 {
+		padding:0 0 1rem;
+		text-align:center;
+		white-space:normal;
+		font-size:1.375rem;
+		font-weight:300;
+	}
+
+	#mainContent *.cycle-slide-div h4 a:link {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+		border-bottom:none;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.cycle-slide-div h4 a:visited {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	#mainContent *.cycle-slide-div h4 a:hover,
+	#mainContent *.cycle-slide-div h4 a:focus,
+	#mainContent *.cycle-slide-div h4 a:active {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+		padding-bottom:-0.125rem;
+		border-bottom:.0625rem solid #ffffff;
+	}
+	
+	#mainContent *.cycle-slide-div-textBox {
+		margin: 0 0;
+		border: none;
+		padding: 0 0 1rem;
+		text-align:center;
+		white-space:normal;
+		font-size: 1.0rem;
+		line-height: 1.5;
+		font-weight: 300;
+		color: #a0a0a0;
+	}
+	
+	#mainContent *.cycle-slide-div-textBox ul.marketSummary li {
+		list-style-type:none;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		font-weight:300;
+	}
+ 
+	#mainContent *.cycle-slide-div *.more {
+		margin:0 auto;
+		text-align:center;
+		font-size:1rem;
+		font-weight:400;
+	}
+	
+	#mainContent *.cycle-slide-div *.more a:link {
+		color:#ffffff;
+	}
+	
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.cycle-slide-div *.more a:visited {
+		color:#ffffff;
+		text-decoration:none;
+	}
+	
+	#mainContent *.cycle-slide-div *.more a:hover,
+	#mainContent *.cycle-slide-div *.more a:focus,
+	#mainContent *.cycle-slide-div *.more a:active {
+		color:#ffffff;
+		text-decoration:underline;
+	}
+	
+	/* If the caret were to change color with the link it comes after, then the pseudo-element (::after) would be added to the pseudo-classes (:link, :visited, :hover, :focus, :active) ... */
+	
+	#mainContent *.cycle-slide-div *.more a::after {
+		margin:0 0 0 0.25rem;
+		border:none;
+		padding:0.4375rem 0.1875rem 0.5rem;
+		content:"";
+		background:url("/images/caretWhiteE-32x40.png");
+		background-size:0.4375rem 0.5rem;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+
+	#sidebar {
+		display:block;
+		position:relative;
+		margin:0 0 1rem;
+		border:none;
+		padding:0 0;
+		width:100%;
+	}
+	
+	*.mainContent-intro-imageBox,
+	*.mainContent-intro-indexBox,
+	*.mainContent-intro-accordionBox,
+	*.homePageSidebar,
+	*.sidebar-quote,
+	*.clientsSelected,
+	*.honorsSelected {
+		display:block;
+		margin:0 0 1rem;
+		border-radius:0.5rem;
+		text-align:left;
+	}
+	
+	*.mainContent-intro-indexBox {
+		margin:0 auto 1rem;
+		border:none;
+		padding:1rem 1rem;
+		min-width:16rem;
+		max-width:18rem;
+		background-color:#606060;
+		color:#ffffff;
+	}
+	
+	/* *.mainContent-intro-indexBox h5 {
+		font-weight:300;
+	} */
+	
+	*.mainContent-intro-imageBox {
+		margin:0 auto 1rem;
+		border-radius:0.5rem;
+		padding:1rem 1rem;
+		min-width:16rem;
+		max-width:18rem;
+		text-align:center;
+		background-color:#bfbfbf;
+	}
+	
+	*.mainContent-intro-imageBox img.image {
+		margin: 0 auto;
+		border:none;
+		border-radius: 0.5rem 0.5rem;
+		padding: 0 0;
+		max-width:100%;
+		max-height: 18rem;	
+		text-align:center;	
+	}
+	
+	*.mainContent-intro-imageBox *.imageCaption,
+	*.subDisplayBox-imageBox *.imageCaption {
+		margin:0 0;
+		border:none;
+		padding:0.4375rem 0 0;
+		text-align:center;
+		font-size:0.875rem;
+		font-weight:300;
+		color:#000000;
+	}
+
+	*.mainContent-intro-miscBox {
+		border:none;
+		padding:0 1rem 1rem;
+		text-align:left;
+		color:#000000;
+		background-color:#ffffff;
+	}
+	
+	*.mainContent-intro-miscBox,
+	*.mainContent-intro-accordionBox,
+	*.clientsSelected {
+		margin:0 auto 1rem;
+		border:none;
+		border-radius:0.5rem;
+		padding:1rem 1rem;
+		min-width:16rem;
+		max-width:18rem;
+		text-align:left;
+		color:#000000;
+		background-color:#dfdfdf;
+	}
+	
+	*.homePageSidebar,
+	*.sidebar-quote,
+	*.honorsSelected {
+		color:#000000;
+		border:none;
+		background-color:#ffefbf;
+		padding:1rem 1rem;
+		text-align:left;
+		font-weight:300;
+	}
+	
+	*.sidebar-quote *.citation,
+	blockquote.praise *.citation {
+		width:100%;
+		text-align:right;
+		font-style:italic;
+		color: #000000;
+		font-weight:400;
+	}
+	
+	#mainContent *.sidebar-quote *.citation a:link,
+	#mainContent blockquote.praise *.citation a:link {
+		color:#bf0000;
+		text-decoration:none;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.sidebar-quote *.citation a:visited,
+	#mainContent blockquote.praise *.citation a:visited {
+		color:#bf0000;
+		text-decoration:none;
+	}
+	
+	#mainContent *.sidebar-quote *.citation a:hover,
+	#mainContent *.sidebar-quote *.citation a:focus,
+	#mainContent *.sidebar-quote *.citation a:active,
+	#mainContent blockquote.praise *.citation a:hover,
+	#mainContent blockquote.praise *.citation a:focus,
+	#mainContent blockquote.praise *.citation a:active
+	 {
+		color:#bf0000;
+		text-decoration:underline;	
+	}
+
+	#mainContent *.mainContent-intro-accordionBox h5 {
+		padding-bottom:0.5rem;
+		color:#bf0000;
+	}
+	
+	#mainContent *.homePageSidebar h5 {
+		text-align:center;
+		color:#bf0000;
+		font-weight:400;
+		font-style:normal;
+	}
+	
+	#mainContent *.mainContent-intro-indexBox h5 {
+		margin:-1rem -1rem 0;
+		border-radius:0.5rem 0.5rem 0 0;
+		padding:0.5rem 0.5rem;
+		background-color:#000000;
+		text-align:center;
+		color:#bfbfbf;
+		font-weight:300;
+		font-style:normal;
+	}
+	
+	#mainContent *.mainContent-intro-indexBox ul.index {
+		list-style-type:none;
+		margin:0 0;
+		border:none;
+		padding:0.5rem 0 0;
+		text-align:center;
+	}
+	
+	#mainContent *.mainContent-intro-indexBox ul.index li a:link {
+		display:list-item;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		font-size:1.125rem;
+		font-weight:300;
+		background:none;
+		color: #ffffff;
+		text-decoration:none;
+	}
+	
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.mainContent-intro-indexBox ul.index li a:visited {
+		color: #ffffff;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	#mainContent *.mainContent-intro-indexBox ul.index li a:hover,
+	#mainContent *.mainContent-intro-indexBox ul.index li a:focus,
+	#mainContent *.mainContent-intro-indexBox ul.index li a:active {
+		color: #ffffff;
+		font-weight:300;
+		text-decoration:underline;
+	}
+		
+	/* The caret changes color with the link it comes after: Add pseudo-element (::after) to pseudo-classes (:link, :visited, :hover, :focus, :active) ... */
+	
+	#mainContent *.mainContent-intro-indexBox ul.index li a::after {
+		margin:0 0 0 0.3125rem;
+		border:none;
+		padding:0.5rem 0.25rem 0.625rem;
+		content:"";
+		background:url("/images/caretWhiteE-32x40.png");
+		background-size:0.5rem 0.625rem;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+
+	*.mainContent-intro-accordion {
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:0 0 0.5rem 1rem;
+		text-align:left;
+	}
+	
+	#mainContent *.mainContent-intro-accordionBox div.mainContent-intro-accordion:last-child {
+		margin-bottom:0;	
+	}
+	
+	#mainContent h6.slideDivTrigger {
+		display:list-item;
+		list-style:none;	
+		margin:0 0; /* aligns with arrowBlueS margin */
+		padding:0 0;
+		font-size:1.0625rem;
+		font-weight:400;
+		text-decoration:none;
+		text-align:left;
+		color:#0000bf;
+	}
+	
+	#mainContent h6.slideDivTrigger::before {
+		float:left;
+		margin:0 0 0 -1.1875rem; 
+		border:none;
+		padding:0.375rem 0 0;
+		width:0.75rem;
+		height:0.75rem;
+		background-size:contain;
+		background-position:bottom;
+		background-repeat:no-repeat;
+		background-image: url(../images/plusBlue-48x48.png);
+		content:"";
+	}
+		
+	#mainContent h6.slideDivTrigger:hover,
+	#mainContent h6.slideDivTrigger:focus,
+	#mainContent h6.slideDivTrigger:active,
+	#mainContent h6.slideDivTrigger.selected {
+		cursor:pointer;
+		text-decoration:underline;
+	}
+		
+	#mainContent h6.slideDivTrigger:focus::before,
+	#mainContent h6.slideDivTrigger:active::before,
+	#mainContent h6.slideDivTrigger.selected::before {
+		float:left;
+		margin:0 0 0 -1.1875rem;
+		border:none;
+		padding:0.375rem 0 0;
+		width:0.75rem;
+		height:0.75rem;
+		background-size:contain;
+		background-position:bottom;
+		background-repeat:no-repeat;
+		background-image: url(../images/minusBlue-48x48.png);
+		content:"";
+	}
+	
+	ul.slideDiv {
+		display:none;
+		list-style:none;
+		border:none;
+		margin:0 0;
+		padding:0 0;
+	}
+		
+	ul.slideDiv li {
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		line-height:1.5;
+		text-align:left;
+  		color:#000000;
+		font-weight:300;
+	}
+	
+	ul.slideDiv li::before {
+		float:left;
+		margin:0 0 0 -1.1875rem; 
+		border:none;
+		padding:0.375rem 0 0;
+		width:0.75rem;
+		height:0.75rem;
+		background-size:contain;
+		background-position:bottom;
+		background-repeat:no-repeat;
+		/*background-image: url(../images/dot12x12Blk-48x48.png);*/
+		content:"";
+	}
+	
+	#samePageNav {
+		display:block;
+		margin:1rem 0 0;
+		border:none;
+		padding:0 0;
+		text-align:center;
+	}
+	
+	#samePageNav .samePageNavBttn {
+ 		cursor:pointer;
+		display:inline-block;
+		margin:0 0;
+		border:none;
+		padding:0.275rem 0.5rem 0.3125rem;
+		font-size:1.375rem;
+		font-weight:400;	
+		color:#0000bf;
+		text-decoration:none;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#samePageNav .samePageNavBttn:visited {
+		color:#0000bf;
+		text-decoration:none;
+	}
+	
+	#samePageNav .samePageNavBttn:hover,
+	#samePageNav .samePageNavBttn:focus,
+	#samePageNav .samePageNavBttn:active {
+		color:#0000bf;
+		text-decoration:underline;
+	}
+	
+	#samePageNav .samePageNavBttn::after {
+		margin: 0 0 0 0.3125rem;
+		border: none;
+		padding: 0.5rem 0.25rem 0.625rem;
+		content: "";
+		background: url("/images/caretBlueE-32x40.png");
+		background-size: 0.5rem 0.625rem;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	blockquote h5 {
+		color:#bf0000;
+	}
+	
+	ul.twoColumn {
+		margin-right:0;
+	}
+	
+	ul.twoColumn li {
+ 		display:inline-block;
+		vertical-align:text-top;
+		width:45%;
+		margin-right:4%;
+		text-align:left;
+	}
+	
+	#mainContent ul.index.threeColumn li { 
+ 		display:inline-block;
+		width:32%; /* max. allowable */
+		text-align:left;
+	}
+		
+	*.mainContent-intro-indexBox-main {
+		display:block;
+		margin:1rem 19rem 1rem 0;
+		border:none;
+		border-radius:0.5rem 0.5rem;
+		padding:1rem 1rem;
+		text-align:left;
+		background-color:#dfdfdf;
+	}
+	
+	blockquote.byImage {
+		margin-right:0rem;	
+	}
+	
+	video.videoLeft,
+	iframe.iframeLeft {
+		display:block;
+		margin:0 auto 1rem;
+		border:none;
+		padding:0 0;
+		width:18rem;
+	}	
+	
+	*.img_withinText-box {
+		width:100%;
+		text-align:center;	
+	}
+	
+	img.withinText {
+		margin:0 auto;
+		width:9.25rem;
+		padding:0 0;
+	}
+	
+	h6.drenco {
+		margin-top:1rem;
+		width:100%;
+		text-align:center;	
+	}
+	
+	*.tagline {
+		font-style:italic;
+		text-align:center;	
+	}
+		
+	#mainContent h4.mediaSection,
+	#mainContent h4.marketSection,
+	#mainContent h4.careerSection {
+		margin:0 0;
+		border:none;
+		padding:0.1875rem 1rem 0.25rem;
+		text-align:center;
+		font-size:1.375rem;
+		font-weight:300;
+		color:#bfbfbf;
+		background-color:#000000;
+	}
+  		
+	#mainContent h4.marketSection.forSection,
+	#mainContent h4.mediaSection.forSection {
+		margin-bottom:-0.5rem;
+		color:#bfbfbf;
+		background-color:#404040;
+	}
+	
+	*.displayBox-box-box {
+		box-sizing: border-box;
+		margin:0 0;
+		border:none;
+		padding:0.5rem 0.5rem;
+		text-align:center; /* centers items in incomplete rows */
+		background-color:#404040;
+	}
+	
+	*.displayBox-box {
+		box-sizing: border-box;
+		display:block; 
+		margin:0 0;
+		border:none;
+		padding:0.5rem 0.5rem;
+		width:100%;
+	}
+	
+	*.displayBox {
+		display:block;
+		margin:0 0;
+		border:none;
+		border-radius:0.5rem 0.5rem;
+		padding:1rem 1rem;
+		text-align:center;
+		background-color:#606060;
+	}
+	
+	#mainContent *.displayBox h4 {
+		padding:0 0 1rem;
+		text-align:center;
+		font-size:1.375rem;
+		font-weight:300;
+	}
+
+	#mainContent *.displayBox h4 a:link {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+		border-bottom:none;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.displayBox h4 a:visited {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	#mainContent *.displayBox h4 a:hover,
+	#mainContent *.displayBox h4 a:focus,
+	#mainContent *.displayBox h4 a:active {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+		padding-bottom:-0.125rem;
+		border-bottom:.0625rem solid #ffffff;
+	}
+	
+	*.displayBox-imageBox {
+		display:block;
+		text-align:center;
+		margin:0 auto;
+		border:none;
+		padding:0 0;
+		max-width:18rem;
+	}
+	
+	*.displayBox-imageBox img.image {
+		margin:0 0;
+		border:none;
+		border-radius:0.5rem 0.5rem;
+		padding:0 0;
+		max-width:100%;
+		max-height:18rem;
+	}
+	
+	*.displayBox *.displayBox-textBox {
+		display:block;
+		margin:0 0;
+		border:none;
+		padding:1rem 0 0;
+		text-align:center;
+		font-size:1.0rem;
+		line-height:1.5;
+		font-weight:300;
+		color:#bfbfbf;
+	}
+
+	*.displayBox *.displayBox-textBox ul li {
+		list-style-type:none;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+		font-weight:300;
+	}
+	
+	*.subDisplayBox-imageBox {
+		margin:0 auto 1rem;
+		width:18rem;
+		text-align:center;
+	}
+	
+	*.subDisplayBox-imageBox img.image {
+		margin:0 0;
+		border:0.0625rem solid #000000;
+		border-radius:0.5rem 0.5rem;
+		padding:0 0;
+		max-width:17.875rem;
+	}
+	
+	*.subDisplayBox-imageBox audio {
+		width:18rem;
+	}
+	
+	#mainContent *.subDisplayBox-imageBox a:link img.image {
+		border:0.0625rem solid #0000bf;
+		border-radius:0.5rem 0.5rem;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.subDisplayBox-imageBox a:visited img.image {
+		border:0.0625rem solid #0000bf;
+		border-radius:0.5rem 0.5rem;
+	}
+	
+	#mainContent *.subDisplayBox-imageBox a:hover img.image,
+	#mainContent *.subDisplayBox-imageBox a:focus img.image,
+	#mainContent *.subDisplayBox-imageBox a:active img.image {
+		border:0.0625rem solid #0000ff;
+		border-radius:0.5rem 0.5rem;
+	}
+	
+	#mainContent *.displayBox *.imageCaption {
+		margin:1rem auto;
+		text-align:center;
+		font-size:0.8725rem;
+		font-weight:300;
+		color:#202020;
+	}
+
+	#mainContent *.displayBox *.imageCaption a:link {
+		font-weight:300;
+		color:#202020;
+		text-decoration:underline;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.displayBox *.imageCaption a:visited {
+		font-weight:300;
+		color:#202020;
+		text-decoration:underline;
+	}
+	
+	#mainContent *.displayBox *.imageCaption a:hover,
+	#mainContent *.displayBox *.imageCaption a:focus,
+	#mainContent *.displayBox *.imageCaption a:active {
+		font-weight:300;
+		color:#202020;
+		text-decoration:none;
+	}
+	
+	#mainContent *.displayBox h6 {
+		text-align:center;
+		color:#bfbfbf;
+		font-weight:300;
+		font-style:normal;
+	}
+	
+	#mainContent *.displayBox h6 a:link {
+		color:#bfbfbf;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	#mainContent *.displayBox h6 a:visited {
+		color:#bfbfbf;
+		font-weight:300;
+		text-decoration:none;
+	}
+	
+	#mainContent *.displayBox h6 a:hover,
+	#mainContent *.displayBox h6 a:focus,
+	#mainContent *.displayBox h6 a:active {
+		color:#ffffff;
+		font-weight:300;
+		text-decoration:none;
+	}
+
+	#mainContent *.displayBox a:link {
+		color:#ffffff;
+		text-decoration:none;
+		font-weight:400;
+	}
+
+	/* For Microsoft Edge -- not Chrome, Safari, or Firefox -- code for :visited must be separated from code for :link or else :visited background-color "defaults" to white (although CSS default is transparent) <http://stackoverflow.com/questions/32260845/avisited-not-working-in-microsoft-edge> Not knowing what else might be so unpredictably affected, to be on the safe side I am separating all :visited css */
+	
+	#mainContent *.displayBox a:visited {
+		color:#ffffff;
+		text-decoration:none;
+		font-weight:400;
+	}
+	
+	#mainContent *.displayBox a:hover,
+	#mainContent *.displayBox a:focus,
+	#mainContent *.displayBox a:active {
+		color:#ffffff;
+		text-decoration:underline;
+		font-weight:400;
+	}
+
+	*.displayBox *.more {
+		margin:1rem auto 0;
+		text-align:center;
+		font-size:1rem;
+	}
+	
+	/* *.twoAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.threeAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fourAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fiveAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.sixAcross {
+		display:none;
+		clear:none;	
+	} */
+	
+	ul.homeIndex li {
+		list-style-type:none;
+		margin:0 0 1rem 0;
+		border:none;
+		padding:0 0;
+		text-align:left;
+	}
+	
+	ul.homeIndex li:last-child {
+		margin-bottom:0;	
+	}
+	
+	video.videoLeft,
+	iframe.iframeLeft,
+	*.subDisplayBox-imageBox {
+		margin:0 auto 1rem;
+		max-width:18rem;
+		text-align:center;
+	}
+	
+	/* If the caret were to change color with the link it comes after, then the pseudo-element (::after) would be added to the pseudo-classes (:link, :visited, :hover, :focus, :active) ... */
+	
+	*.displayBox *.more a::after {
+		margin:0 0 0 0.25rem;
+		border:none;
+		padding:0.4375rem 0.1875rem 0.5rem;
+		content:"";
+		background:url("/images/caretWhiteE-32x40.png");
+		background-size:0.4375rem 0.5rem;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	ul.homePageSidebar-list li a.more::after {
+		margin:0 0 0 0.25rem;
+		border:none;
+		padding:0.4375rem 0.1875rem 0.5rem;
+		content:"";
+		background:url("/images/caretRedE-32x40.png");
+		background-size:0.4375rem 0.5rem;
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+	
+	#mainContent h2,
+	#mainContent h3,
+	#mainContent h4,
+	#mainContent h5,
+	*.textcenter,
+	*.textcentersmall {
+		text-align:center;	
+	}
+
+	#mainContent h3 {
+		color: #bf0000;
+	}
+	
+	#mainContent h5 {
+		font-style:normal;
+	}
+	
+	body#searchPage #mainContent h4 {
+		color: #bf0000;
+		text-align:center;
+	}
+	
+	body#searchPage #mainContent h5 {
+		color: #000000;
+	}
+	
+	#copyright-narrow {
+		display:block;	
+	}
+	
+	#copyright-wide {
+		display:none;	
+	}
+	
+}
+
+/* Values for properties in each of the succeeding, increasing min-width media queries override those in the previous, narrower screens. */
+	
+@media all and (min-width: 40rem) {
+
+/* Two columns (See the definition of 1rem in @media queries, with notes about RWD, at the beginning of this CSS document: 1rem in @media queries = 16px; 1 rem in this html = 16px.) */
+
+/* Note that this layout is typically for a tablet, typically with a vertical viewport. */
+
+	table.altRows td:first-child {
+		white-space:nowrap;
+	}
+
+	#header {
+		height:3.5625rem;
+		margin-bottom:-3.5625rem; /* makes no difference when .headerFixed but pulls up #mainContent when .headerRelative (but doesn't work if negative margin included with .headerRelative declarations) */
+	}
+	
+	a.bookmark { /* When click link to bookmark in index, above, page scrolls up until bookmark is at top of viewport; then the fun begins ... */
+		display:block; /* necessary for effect */
+		margin-bottom:4.5625rem; /* Push (indexed) content after bookmark down (1rem) below fixed header (With relative header, there is just extra space between top of viewport and bookmark). */
+		margin-top:-3.5625rem; /* In effect, pull content before bookmark down to (1rem within) content after bookmark. */
+		height:0;
+	}
+
+	#mainContent-intro .careerLinks {
+		font-weight:400;
+		text-align:left;
+	}
+	
+	#ddSiteTitle-ddLogo-box {
+		position:absolute;
+		top:0;
+		left:0;
+		margin:0 0;
+	}
+	
+	#nav-box-box-box {
+		top:0;
+		right:0rem;
+		left:20rem;
+		width:auto;
+	}
+	
+	*.nav-box-box {
+		padding: 0.5rem 0;
+	}
+	
+	h5.navMenuTrigger {
+		padding:0.1875rem 0 0.3125rem;
+		font-weight:300;
+		font-size:1.375rem;
+	}
+	
+	#footer-share-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:2%;
+		right:76%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding:0 0;
+	}
+	
+	#shareImage {
+		display:inline-block;	
+	}
+	
+	#shareText {
+		display:inline-block;
+		vertical-align:text-top;
+		margin:0 0;
+		border:none;
+		padding:0.125rem 0;
+		width:3.25rem;
+		font-size:1.0rem;
+		line-height:1rem;
+		text-align:left;
+		font-weight:300;
+	}
+	
+	#footer-phone-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:26%;
+		right:51%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	div#phoneIcon {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-right:0.25rem;
+	}
+	
+	div#phoneText {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+	}
+	
+	#footer-mail-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:51%;
+		right:26%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	div#mailIcon {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-right:0.25rem;
+	}
+	
+	div#mailText40 {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+	}
+	
+	div#mailText60 {
+		display:none;
+	}
+	
+	div#mailText80 {
+		display:none;
+	}
+	
+	#footer-searchForm-box-box {
+		position:absolute;
+		top:0.375rem;
+		bottom:0.375rem;
+		height:auto;
+		left:76%;
+		right:2%;
+		width:auto;
+		display:block;	
+		margin:0 0;
+		border:none;
+		padding: 0 0;
+	}
+	
+	#mainContent {
+		margin-top:3.5625rem;
+	}
+	
+	#homePage #mainContent {
+		margin-top:4.5625rem;	
+	}
+	
+	*.cycle-slide-div {
+		display:table;
+		margin:0 0;
+		border:none;
+		padding:0 1rem;
+		height:18rem;
+		width:38rem;
+		vertical-align:top;
+	}
+
+	#homeMedia-box *.cycle-slide-div {
+		height:18rem;
+	}
+
+	#homeMarket-box *.cycle-slide-div {
+		height:21rem;
+	}
+
+	#homeCareer-box *.cycle-slide-div {
+		height:18rem;
+	}
+	
+	*.cycle-slide-div-imageCell {
+		display:table-cell;
+		vertical-align:top;
+		margin:0 0;
+		border:none;
+		padding:0 0;
+	}
+	
+	*.cycle-slide-div-textCell {
+		display:table-cell;
+		vertical-align:top;
+		margin:0 0;
+		border:none;
+		padding:0 1rem;
+	}
+	
+	*.cycle-slide-div img.image {
+		margin:0 0;
+	}
+	
+	#mainContent *.cycle-slide-div h4 {
+		text-align:left;
+	}
+
+	#mainContent *.cycle-slide-div-textBox {
+		text-align:left;
+	}
+
+	#mainContent *.cycle-slide-div *.more {
+		text-align:left;
+	}
+	
+	#sidebar {
+		float:right;
+		display: block;
+		margin: 0 0 0 2rem;
+		border: none;
+		padding: 0 0;
+		width: 20rem;
+	}
+	
+	*.mainContent-intro-imageBox {
+		margin:0 auto 1rem;
+		border-radius:0.5rem;
+		padding:1rem 1rem;
+		width:18rem;
+		text-align:center;
+		background-color:#bfbfbf;
+	}
+	
+	*.mainContent-intro-imageBox img.image {
+		margin: 0 auto;
+		border:none;
+		border-radius: 0.5rem 0.5rem;
+		padding: 0 0;
+		max-width:100%;
+		max-height: 18rem;	
+		text-align:center;	
+	}
+	
+	*.mainContent-intro-imageBox *.imageCaption,
+	*.subDisplayBox-imageBox *.imageCaption {
+		margin:0 0;
+		border:none;
+		padding:0.4375rem 0 0;
+		text-align:center;
+		font-size:0.875rem;
+		font-weight:300;
+		color:#000000;
+	}
+
+	*.displayBox-box {
+		box-sizing: border-box;
+		display:inline-block; /* allows items in incomplete rows to be centered, with text-align:center on parent */
+		vertical-align:top;
+		margin:0 0;
+		width:49%; /* At least in this layout, rounding down to previous integer accounts for additional space after inline-block, of approximately 0.25rem (depending on browser), rendered automatically with any whitespace between HTML encoding for elements with display: inline-block */
+	}
+	
+	*.displayBox { /* Where boxes align side-by-side, they look much neater all at the same height (Previously, making all the boxes the same length, in a single column, looks very wasteful of space, and thus the scrolling-viewer's time). */
+		height:38rem;	
+	}
+	
+	#homeMedia *.displayBox {
+		height:33rem;	
+	}
+	
+	#homeMarket *.displayBox {
+		height:38rem;	
+	}
+	
+	#homeCareer *.displayBox {
+		height:32rem;	
+	}
+	
+	/* *.twoAcross {
+		display:block;
+		clear:both;	
+	}
+	
+	*.threeAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fourAcross {
+		display:block;	
+		clear:both;
+	}
+	
+	*.fiveAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.sixAcross {
+		display:block;
+		clear:both;	
+	} */
+	
+	video.videoLeft,
+	iframe.iframeLeft,
+	*.subDisplayBox-imageBox {
+		float:left;
+		margin:0 1rem 1rem 0;
+		max-width:18rem;
+	}
+	
+	*.img_withinText-box {
+		text-align:left;
+	}
+	
+	img.withinText {
+		margin:0 0;
+	}
+	
+	h6.drenco {
+		margin-top:1rem;
+		text-align:left;	
+	}
+	
+	*.tagline {
+		text-align:left;	
+	}
+	
+	*.mainContent-intro-imageBox .imageCaption {
+		text-align:center;
+	}
+	
+	blockquote.byImage {
+		margin-right:22rem;	
+	}
+	
+	ul.twoColumn {
+		margin-right:22rem;
+	}
+	
+	#searchPage #mainContent h2 {
+		text-align:center;	
+	}
+	
+	#homePage #mainContent h3,
+	#mainContent h2,
+	#mainContent h3,
+	#mainContent h4,
+	#mainContent h5,
+	#mainContent h6.careerPlaceDates {
+		text-align:left;
+	}
+	
+	#mainContent h2 {
+		font-weight:300;	
+	}
+	
+	*.textcenter,
+	*.textcentersmall {
+		text-align:left;
+	}
+	
+	#mainContent *.mainContent-intro-indexBox h5,
+	#mainContent *.mainContent-intro-accordionBox h5,
+	#mainContent div.clientsSelected h5,
+	#mainContent div.honorsSelected h5,
+	body#searchPage h5,
+	body#notFoundPage h5,
+	body#notFoundPage h2 {
+		text-align:center;
+	}
+	
+	#copyright-narrow {
+		display:none;	
+	}
+	
+	#copyright-wide {
+		display:block;	
+	}
+	
+}
+
+@media all and (min-width: 60rem) {
+
+/* Three columns (See the definition of 1rem in @media queries, with notes about RWD, at the beginning of this CSS document: 1rem in @media queries = 16px; 1 rem in this html = 16px.) */
+
+/* Note that this layout is typically for a laptop or desktop monitor, typically with a horizontal viewport. */
+
+	*.nav-box-box {
+		padding:0.5rem 0;
+	}
+	
+	h5.navMenuTrigger {
+		padding:0.0625rem 0 0.25rem;
+		font-weight:300;
+		font-size:1.5rem;
+	}
+	
+	ul.navMenu#menu1,
+	ul.navMenu#menu2,
+	ul.navMenu#menu3 {
+		margin:0 0;
+		width:100%;
+	}
+	
+	#mainContent-intro {
+		width:58rem; /* Keeps lines from becoming too long for reading. */
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	div#mailText40 {
+		display:none;
+	}
+	
+	div#mailText60 {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+	}
+	
+	div#mailText80 {
+		display:none;
+	}
+	
+	 h1.homeIntroHeading.samePageNavBttn {
+		padding:1rem 1rem 0rem;
+		font-size:5.5rem;
+		line-height:5.5rem;
+	}
+
+	.homeIntroText {
+		padding:0.875rem 1.75rem;
+	}
+	
+	#mainContent .homeIntroText a:link {
+		font-size:1.75rem;
+		line-height:1.75rem;
+	}
+	
+	#mainContent .homeIntroText a:visited {
+		font-size:1.75rem;
+		line-height:1.75rem;
+	}
+	
+	#mainContent .homeIntroText a:hover,
+	#mainContent .homeIntroText a:focus,
+	#mainContent .homeIntroText a:active {
+		font-size:1.75rem;
+		line-height:1.75rem;
+	}
+	
+	*.displayBox-box {
+		box-sizing: border-box;
+		width:33%; /* At least in this layout, rounding down to previous integer accounts for additional space after inline-block, of approximately 0.25rem (depending on browser), rendered automatically with any whitespace between HTML encoding for elements with display: inline-block */
+	}
+	
+	/* *.twoAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.threeAcross {
+		display:block;
+		clear:both;	
+	}
+	
+	*.fourAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fiveAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.sixAcross {
+		display:block;
+		clear:both;	
+	} */
+	
+}
+
+@media all and (min-width: 80rem) {
+
+/* Four columns (See the definition of 1rem in @media queries, with notes about RWD, at the beginning of this CSS document: 1rem in @media queries = 16px; 1 rem in this html = 16px.) */
+
+/* Note that this layout is typically for a laptop or desktop monitor, typically with a horizontal viewport. */
+
+	span.at4-icon.aticon-compact {
+		margin:0 60% 0;
+	}
+	
+	/* Also note that the element above and the element below must have horizontal measurements in percentages, otherwise they will not stay together as the width of the containing box changes. Although this was the best solution I could find, it still only approximates the behavior of the icon-text labels of the other buttons. The structure of the widget-injected div, a, and span precluded other options. */
+
+	#share-text.footer-contentBox {
+		left:40%;
+	}
+	
+	div#mailText40 {
+		display:none;
+	}
+	
+	div#mailText60 {
+		display:none;
+	}
+	
+	div#mailText80 {
+		display:inline-block;
+		vertical-align:text-top;
+		margin-top:-0.0625rem;
+	}
+	
+	 h1.homeIntroHeading.samePageNavBttn {
+		padding:1rem 1rem 0rem;
+		font-size:6rem;
+		line-height:6rem;
+	}
+
+	.homeIntroText {
+		padding:1rem 2rem;
+	}
+	
+	#mainContent .homeIntroText a:link {
+		font-size:2rem;
+		line-height:2rem;
+	}
+	
+	#mainContent .homeIntroText a:visited {
+		font-size:2rem;
+		line-height:2rem;
+	}
+	
+	#mainContent .homeIntroText a:hover,
+	#mainContent .homeIntroText a:focus,
+	#mainContent .homeIntroText a:active {
+		font-size:2rem;
+		line-height:2rem;
+	}
+	
+	*.displayBox-box {
+		box-sizing: border-box;
+		width:24%; /* At least in this layout, rounding down to previous integer accounts for additional space after inline-block, of approximately 0.25rem (depending on browser), rendered automatically with any whitespace between HTML encoding for elements with display: inline-block */
+	}
+	
+	/* *.twoAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.threeAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fourAcross {
+		display:block;
+		clear:both;
+	}
+	
+	*.fiveAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.sixAcross {
+		display:none;
+		clear:none;	
+	} */
+	
+}
+
+@media all and (min-width: 100rem) {
+
+/* Five columns (See the definition of 1rem in @media queries, with notes about RWD, at the beginning of this CSS document: 1rem in @media queries = 16px; 1 rem in this html = 16px.) */
+
+/* Note that this layout is typically for a laptop or desktop monitor, typically with a horizontal viewport. */
+	
+	#introVideo-Doug-box-box { /* topmost horizontal band on homepage, within #mainContent */
+		margin:0 auto;
+		border:none;
+		padding:1rem 1rem;
+		width:98rem;
+	}
+	
+	*.displayBox-box {
+		box-sizing: border-box;
+		width:19%; /* At least in this layout, rounding down to previous integer accounts for additional space after inline-block, of approximately 0.25rem (depending on browser), rendered automatically with any whitespace between HTML encoding for elements with display: inline-block */
+	}
+	
+	/* *.twoAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.threeAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fourAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fiveAcross {
+		display:block;
+		clear:both;	
+	}
+	
+	*.sixAcross {
+		display:none;
+		clear:none;	
+	} */
+	
+}
+
+@media all and (min-width: 120rem) {
+
+/* Six columns (See the definition of 1rem in @media queries, with notes about RWD, at the beginning of this CSS document: 1rem in @media queries = 16px; 1 rem in this html = 16px.) */
+
+/* Note that this layout is typically for a horizontal viewport at full HD: 1920x1080. */
+	
+	/* *.displayBox-box {
+		box-sizing: border-box;
+		width:16%; /* At least in this layout, rounding down to previous integer accounts for additional space after inline-block, of approximately 0.25rem (depending on browser), rendered automatically with any whitespace between HTML encoding for elements with display: inline-block */
+	}
+	
+	/* *.twoAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.threeAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fourAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.fiveAcross {
+		display:none;
+		clear:none;	
+	}
+	
+	*.sixAcross {
+		display:block;
+		clear:both;	
+	} */
+	
+}
